@@ -34,7 +34,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 // ========== MIDDLEWARE END ========== //
 
-
+//TODO: Refactor then(), catch() code so that you don't have to
+//      to write these instructions all the time. TIP: Implement
+//      a function that takes a function corresponding to the
+//      appropriate HTTP method?
 // ========== ROUTES BEGIN ========== //
 // ----- LISTS ----- //
 app.get("/lists", (req, res) => {
