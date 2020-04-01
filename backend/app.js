@@ -42,7 +42,7 @@ app.use(express.json());
 // ----- LISTS ----- //
 app.get("/lists", (req, res) => {
     List.find({})
-        .then(lists => res.send(lists))
+        .then((lists) => res.send(lists))
         .catch((error) => console.log(error));
 });
 

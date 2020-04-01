@@ -1,6 +1,6 @@
 export default class Task {
     _id: string;
-    title: string;
-    _listid: string;
+    titlelol: string;
+    _listId: string;
     completed: boolean;
 }

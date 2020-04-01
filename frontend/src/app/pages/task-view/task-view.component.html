@@ -15,9 +15,9 @@
 
         <div class="task-list-container">
             <h1 class="title has-text-primary">Tasks</h1>
-            <div class="task">
+            <div class="task" [class.complete]="task.completed" *ngFor="let task of tasks">
                 <p class="white-text">
-                    Task
+                    {{ task.title }}
                     <span class="pull-right task-delete btn-rounded-corners">X</span>
                 </p>
             </div>
