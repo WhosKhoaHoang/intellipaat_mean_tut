@@ -12,8 +12,13 @@ import { ActivatedRoute, Router, Params } from "@angular/router";
 })
 export class TaskViewComponent implements OnInit {
 
+    // Instead of grabbing values from URL
+    // parameters each time, you can use
+    // these variables here instead and
+    // use "this" to access them.
     lists: List[] = [];
     tasks: Task[] = [];
+    listId: string;
 
     constructor(
       private taskService: TaskService,
@@ -23,12 +28,16 @@ export class TaskViewComponent implements OnInit {
 
     ngOnInit() {
         this.taskService.getLists().subscribe((lists: List[]) => this.lists = lists);
-
         this.route.params.subscribe((params: Params) => {
-          const listId = params.listId;
-          if (!listId) return;
-          this.taskService.getTask(listId)
+          this.listId = params.listId;
+          if (!this.listId) return;
+          this.taskService.getTask(this.listId)
               .subscribe((tasks: Task[]) => this.tasks = tasks);
         });
+    }
+
+    onTaskClick(task: Task) {
+      this.taskService.setCompleted(this.listId, task)
+          .subscribe(() => task.completed = !task.completed);
     }
 }

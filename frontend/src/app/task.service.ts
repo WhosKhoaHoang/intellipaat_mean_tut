@@ -34,6 +34,6 @@ export class TaskService {
     }
 
     setCompleted(listId: string, task: Task) {
-        return this.webService.patch(`lists/${listId}/tasks/${task._id}`, { complete: !task.completed });
+        return this.webService.patch(`lists/${listId}/tasks/${task._id}`, { completed: !task.completed });
     }
 }
