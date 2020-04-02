@@ -3,7 +3,7 @@
         <div class="sidebar">
             <h1 class="title has-text-primary">Lists</h1>
             <div class="list-menu">
-                <a href="#" class="list-menu-item is-active" *ngFor="let list of lists">
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
                     <p class="white-text">
                         {{ list.title }}
                         <span class="pull-right task-delete btn-rounded-corners">X</span>
