@@ -49,4 +49,12 @@ export class TaskViewComponent implements OnInit {
       this.taskService.deleteTask(this.listId, task._id)
           .subscribe((task: Task) => this.tasks = this.tasks.filter(t => t._id !== task._id));
     }
+
+    deleteList(list: List) {
+      // You don't want to pass this.listId because this.listId refers to
+      // the CURRENTLY SELECTED LIST, not necessarily the list that just got
+      // its X button clicked...
+      this.taskService.deleteList(list._id)
+          .subscribe(() => this.lists = this.lists.filter(l => l._id !== list._id));
+    }
 }

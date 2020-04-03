@@ -6,7 +6,7 @@
                 <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
                     <p class="white-text">
                         {{ list.title }}
-                        <span class="pull-right task-delete btn-rounded-corners">X</span>
+                        <span class="pull-right task-delete btn-rounded-corners" (click)="deleteList(list)">X</span>
                     </p>
                 </a>
             </div>
