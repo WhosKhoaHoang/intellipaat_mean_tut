@@ -10,7 +10,7 @@
                     </p>
                 </a>
             </div>
-            <button class="btn btn-primary btn-rounded-corners">Add List</button>
+            <button class="btn btn-primary btn-rounded-corners" routerLink="/new-list">Add List</button>
         </div>
 
         <div class="task-list-container">
@@ -21,6 +21,7 @@
                     <span class="pull-right task-delete btn-rounded-corners" (click)="deleteTask(task)">X</span>
                 </p>
             </div>
+            <button class="btn-primary add-button" (click)="addTaskClick()">Add Task</button>
         </div>
 
     </div>

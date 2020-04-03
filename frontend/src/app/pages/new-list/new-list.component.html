@@ -1,0 +1,13 @@
+<!-- THINK: Think of components in Angular as distinct sections of
+            your page that are reusable and have a reasonably
+            complex level of interactity. -->
+<div class="centered-content">
+  <div class="modal-box form-group">
+    <h1 class="title">Create a new list</h1>
+    <input #listInput type="text" class="form-control has-background-light" placeholder="Enter list name"/>
+    <div class="cancel_add">
+      <button class="btn white-text" routerLink="/">Cancel</button>
+      <button class="btn btn-primary" (click)="addList(listInput.value)">Add</button>
+    </div>
+  </div>
+</div>

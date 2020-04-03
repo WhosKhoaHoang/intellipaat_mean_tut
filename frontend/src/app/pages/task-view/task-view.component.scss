@@ -85,14 +85,13 @@
 
 }
 
-.circle-add-button {
+.add-button {
     position: absolute;
+    padding: 10px;
     bottom: 35px;
     right: 35px;
-    height: 50px;
-    width: 50px;
     border: none;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 .btn-rounded-corners {
