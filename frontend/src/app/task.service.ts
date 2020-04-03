@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { WebService } from "./web.service";
 import Task from "./models/task";
 
+// THINK: This module is like an API that
+//        the event handlers for the view
+//        will call
+
 @Injectable({
     providedIn: 'root'
 })
@@ -26,11 +30,11 @@ export class TaskService {
     }
 
     deleteList(listId: string) {
-        return this.webService.delete(`/lists/${listId}`);
+        return this.webService.delete(`lists/${listId}`);
     }
 
     deleteTask(listId: string, taskId: string) {
-        return this.webService.delete(`/lists/${listId}/tasks/${taskId}`);
+        return this.webService.delete(`lists/${listId}/tasks/${taskId}`);
     }
 
     setCompleted(listId: string, task: Task) {

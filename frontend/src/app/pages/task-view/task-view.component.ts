@@ -5,6 +5,9 @@ import { TaskService } from "src/app/task.service";
 import { ActivatedRoute, Router, Params } from "@angular/router";
 
 
+// THINK: This module contains all of the event
+//        handlers associated with the view
+
 @Component({
     selector: 'app-task-view',
     templateUrl: './task-view.component.html',
@@ -27,6 +30,7 @@ export class TaskViewComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        // NOTE: This subscribe() method is like a callback function
         this.taskService.getLists().subscribe((lists: List[]) => this.lists = lists);
         this.route.params.subscribe((params: Params) => {
           this.listId = params.listId;
@@ -39,5 +43,10 @@ export class TaskViewComponent implements OnInit {
     onTaskClick(task: Task) {
       this.taskService.setCompleted(this.listId, task)
           .subscribe(() => task.completed = !task.completed);
+    }
+
+    deleteTask(task: Task) {
+      this.taskService.deleteTask(this.listId, task._id)
+          .subscribe((task: Task) => this.tasks = this.tasks.filter(t => t._id !== task._id));
     }
 }

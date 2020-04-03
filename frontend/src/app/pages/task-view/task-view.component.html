@@ -18,7 +18,7 @@
             <div class="task" [class.complete]="task.completed" *ngFor="let task of tasks" (click)="onTaskClick(task)">
                 <p class="white-text">
                     {{ task.title }}
-                    <span class="pull-right task-delete btn-rounded-corners">X</span>
+                    <span class="pull-right task-delete btn-rounded-corners" (click)="deleteTask(task)">X</span>
                 </p>
             </div>
         </div>
