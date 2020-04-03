@@ -4,7 +4,13 @@ import Task from "./models/task";
 
 // THINK: This module is like an API that
 //        the event handlers for the view
-//        will call
+//        will call. The methods in this
+//        module will then makes calls to
+//        an actual, proper API (that in
+//        this project we've defined in
+//        the backend directory). Thus, it's
+//        like a pseudo-API calling an actual
+//        API.
 
 @Injectable({
     providedIn: 'root'
